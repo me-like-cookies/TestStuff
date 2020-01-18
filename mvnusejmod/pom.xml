@@ -10,78 +10,78 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<mainclass>me.like.cookies.mvnusejmod.HelloWorld</mainclass>
-		
+
 		<javafx.groupid>local.openjdk</javafx.groupid>
 		<javafx.version>11.0.6-Bellsoft+</javafx.version>
 		<javafx.platform>win32</javafx.platform>
 		<javafx.packaging>jmod</javafx.packaging>
 	</properties>
-	
+
 	<dependencies>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-base</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-controls</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-graphics</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-media</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-swing</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-web</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
-				<dependency>
-					<groupId>${javafx.groupid}</groupId>
-					<artifactId>javafx-fxml</artifactId>
-					<version>${javafx.version}</version>
-					<classifier>${javafx.platform}</classifier>
-					<type>${javafx.packaging}</type>
-				</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-base</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-graphics</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-media</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-swing</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-web</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
+		<dependency>
+			<groupId>${javafx.groupid}</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>${javafx.version}</version>
+			<classifier>${javafx.platform}</classifier>
+			<type>${javafx.packaging}</type>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
-		<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-jar-plugin</artifactId>
-		        <configuration>
-		          <archive>
-		            <manifest>
-		              <addClasspath>true</addClasspath>
-		            </manifest>
-		          </archive>
-		        </configuration>
-		      </plugin>
-      			<plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
 					<archive>
