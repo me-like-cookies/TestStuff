@@ -1,11 +1,12 @@
 package me.like.cookies.textflowtest;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
  
 public class HelloWorld extends Application {
@@ -14,21 +15,21 @@ public class HelloWorld extends Application {
     }
     
     @Override
-    public void start(@SuppressWarnings("exports") Stage primaryStage) {
-        primaryStage.setTitle("Hello World!");
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
- 
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    public void start(@SuppressWarnings("exports") Stage stage) 
+    {
+        stage.setTitle("TextFlow Test");
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        primaryStage.setScene(new Scene(root, 300, 250));
-        primaryStage.show();
+    	Text text = new Text("Can you select the text with your mouse\nwithin a JavaFX Text?\n");
+        TextArea textArea = new TextArea("can you\nselect this text with the mouse\nwithin a JavaFX TextArea?");
+        textArea.setEditable(false);
+        
+        TextFlow textFlowPane = new TextFlow();
+        ObservableList<Node> list = textFlowPane.getChildren();
+        list.addAll(text, textArea);
+        
+        Scene scene = new Scene(textFlowPane);
+        
+        stage.setScene(scene);
+        stage.show();
     }
 }
