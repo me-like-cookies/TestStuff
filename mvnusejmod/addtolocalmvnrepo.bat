@@ -1,15 +1,16 @@
 REM JDKVERSION=major.minor.micro-supplier
-SET JDKVERSION=11.0.6-Bellsoft+
+SET JDKVERSION=13.0.2+9-Bellsoft+
 REM JDKPLATFORMS: win32, linux-arm32
-SET JDKPLATFORM=win32
-SET JDKPATH=bellsoft-jdk11.0.6-win_i586
+SET JDKPLATFORM=win64
+SET JDKPATH=bellsoft-jdk13.0.2+9-windows-amd64-full
 SET JMODPATH=%JDKPATH%\jmods
-SET PARAMS=-Dversion=%JDKVERSION% -Dpackaging=jmod -Dclassifier=%JDKPLATFORM%
+SET GROUPID=local.openjdk
+SET PARAMS=-Dversion=%JDKVERSION% -Dpackaging=jmod -Dclassifier=%JDKPLATFORM% -DgroupId=%GROUPID%
 
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.base.jmod -DgroupId=local.openjdk -DartifactId=javafx-base %PARAMS%
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.controls.jmod -DgroupId=local.openjdk -DartifactId=javafx-controls %PARAMS%
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.fxml.jmod -DgroupId=local.openjdk -DartifactId=javafx-fxml %PARAMS%
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.graphics.jmod -DgroupId=local.openjdk -DartifactId=javafx-graphics %PARAMS%
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.media.jmod -DgroupId=local.openjdk -DartifactId=javafx-media %PARAMS%
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.swing.jmod -DgroupId=local.openjdk -DartifactId=javafx-swing %PARAMS%
-call mvn install:install-file -Dfile=%JMODPATH%\javafx.web.jmod -DgroupId=local.openjdk -DartifactId=javafx-web %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.base.jmod     -DartifactId=javafx-base     %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.controls.jmod -DartifactId=javafx-controls %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.fxml.jmod     -DartifactId=javafx-fxml     %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.graphics.jmod -DartifactId=javafx-graphics %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.media.jmod    -DartifactId=javafx-media    %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.swing.jmod    -DartifactId=javafx-swing    %PARAMS%
+call mvn install:install-file -Dfile=%JMODPATH%\javafx.web.jmod      -DartifactId=javafx-web      %PARAMS%
