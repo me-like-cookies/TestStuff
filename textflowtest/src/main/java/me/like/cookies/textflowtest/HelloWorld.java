@@ -1,10 +1,7 @@
 package me.like.cookies.textflowtest;
 
 import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -19,13 +16,10 @@ public class HelloWorld extends Application {
     {
         stage.setTitle("TextFlow Test");
         
-    	Text text = new Text("Can you select the text with your mouse\nwithin a JavaFX Text?\n");
-        TextArea textArea = new TextArea("can you\nselect this text with the mouse\nwithin a JavaFX TextArea?");
-        textArea.setEditable(false);
+    	Text text = new Text("Can you select the text with your mouse\nwithin a JavaFX javafx.scene.text.Text?\nI'm afraid, not.");
         
         TextFlow textFlowPane = new TextFlow();
-        ObservableList<Node> list = textFlowPane.getChildren();
-        list.addAll(text, textArea);
+        textFlowPane.getChildren().addAll(text);
         
         Scene scene = new Scene(textFlowPane);
         
