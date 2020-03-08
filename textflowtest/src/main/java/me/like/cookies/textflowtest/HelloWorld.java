@@ -22,7 +22,7 @@ public class HelloWorld extends Application {
     	WebView v = new WebView();
     	v.getEngine().loadContent(content);
         Scene scene = new Scene(v);
-        stage.setTitle("TextFlow Test");
+        stage.setTitle("WebView Test");
         stage.setScene(scene);
 	}
 }
