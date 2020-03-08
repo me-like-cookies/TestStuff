@@ -1,16 +1,21 @@
 package me.like.cookies.textflowtest;
 
+import org.fxmisc.richtext.StyleClassedTextArea;
+
 import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
  
-public class HelloWorld extends Application {
-    public static void main(String[] args) {
+public class HelloWorld extends Application 
+{
+	private static final String CAPTION = "LOREM IPSUM\n";
+	private static final String LOREM_IPSUM = 
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore " +
+	        "et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. " +
+	        "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+	
+	public static void main(String[] args) {
         launch(args);
     }
     
@@ -18,18 +23,24 @@ public class HelloWorld extends Application {
     public void start(@SuppressWarnings("exports") Stage stage) 
     {
         stage.setTitle("TextFlow Test");
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setPannable(true);
         
-    	Text text = new Text("Can you select the text with your mouse\nwithin a JavaFX Text?\n");
-        TextArea textArea = new TextArea("can you\nselect this text with the mouse\nwithin a JavaFX TextArea?");
-        textArea.setEditable(false);
-        
-        TextFlow textFlowPane = new TextFlow();
-        ObservableList<Node> list = textFlowPane.getChildren();
-        list.addAll(text, textArea);
-        
-        Scene scene = new Scene(textFlowPane);
-        
+        StyleClassedTextArea area = new StyleClassedTextArea();
+        area.setPrefSize(400, 300);
+        scrollPane.setContent(area);       
+        Scene scene = new Scene(scrollPane);
         stage.setScene(scene);
+
+        area.getStylesheets().add(HelloWorld.class.getResource("/css/StyleClasses.css").toExternalForm());
+        
+        area.append(CAPTION, "caption");
+        area.append("\n", "miniline");
+        area.append(LOREM_IPSUM, "other");
+        area.setEditable(false);
+        area.setWrapText(true);
+
+
         stage.show();
     }
 }

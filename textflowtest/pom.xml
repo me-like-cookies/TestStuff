@@ -17,7 +17,26 @@
 		<javafx.packaging>jmod</javafx.packaging>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>oss.sonatype.org-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
+	 	<dependency>
+	 		<groupId>org.fxmisc.richtext</groupId>
+	 		<artifactId>richtextfx</artifactId>
+	 		<version>0.10.4</version>
+	 	</dependency>
+	
 		<dependency>
 			<groupId>${javafx.groupid}</groupId>
 			<artifactId>javafx-base</artifactId>
@@ -69,6 +88,11 @@
 		</dependency>
 	</dependencies>
 	<build>
+	    <resources>
+        	<resource>
+        		<directory>res</directory>
+     		</resource>
+   		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

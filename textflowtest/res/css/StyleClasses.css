@@ -1,0 +1,15 @@
+.caption {
+    -fx-font-weight: bold;
+    -fx-font-size: 36;
+    -fx-underline: true;
+}
+
+.miniline {
+    -fx-font-size: 6;
+}
+
+.other {
+    -fx-font-style: italic;
+	-fx-font-size: 24;
+	-fx-fill: blue;
+ }
